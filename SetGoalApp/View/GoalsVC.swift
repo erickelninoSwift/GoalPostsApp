@@ -13,9 +13,12 @@ class GoalsVC : UIViewController
     
     @IBOutlet weak var tableView: UITableView!
     
-    
+    override func viewDidAppear(_ animated: Bool) {
+    navigationController?.navigationBar.barStyle = .black
+    }
     override func viewDidLoad() {
         
+      
         super.viewDidLoad()
     }
     @IBAction func addgoas(_ sender: Any)
