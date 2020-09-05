@@ -54,6 +54,15 @@ class GoalsVC : UIViewController ,UITableViewDelegate, UITableViewDataSource
     }
     @IBAction func addgoas(_ sender: Any)
     {
-        print("Erick El nino")
+       if let CreateVc = storyboard?.instantiateViewController(identifier: "CreateGoalVC") as? CreateGoalVc
+       {
+            
+           presentview(CreateVc)
+        
+       }else
+       {
+        print("There was no view found")
+        
+        }
     }
 }
