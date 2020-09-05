@@ -15,12 +15,11 @@ extension UIViewController
         let transition = CATransition()
         transition.duration = 0.3
         transition.type = .push
-        transition.subtype = .fromRight
+        transition.subtype = .some(.fromTop)
         self.view.window?.layer.add(transition, forKey: kCATransition)
         self.present(viewControllertodisplay, animated: false, completion: nil)
         
     }
-    
     
     func dismissAnimation(_ erickviewcontroller: UIViewController)
     {
@@ -29,6 +28,7 @@ extension UIViewController
         transition.type = .push
         transition.subtype = .fromLeft
         self.view.window?.layer.add(transition, forKey: kCATransition)
+        
         self.present(erickviewcontroller, animated: false, completion: nil)
     }
     

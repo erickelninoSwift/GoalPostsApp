@@ -38,6 +38,7 @@ class CreateGoalVc: UIViewController
     {
         if let Goalvc = storyboard?.instantiateViewController(identifier: "GoalViewController") as? GoalsVC
         {
+            self.modalPresentationStyle = .fullScreen
             dismissAnimation(Goalvc)
         }else
         {
