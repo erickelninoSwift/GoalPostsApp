@@ -17,9 +17,13 @@ class CreateGoalVc: UIViewController
     
     @IBOutlet weak var nextbutton: UIButton!
     
+    var goaltype: Goaltypes = .ShortTerm
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        nextbutton.bindkeyboard()
+        shorttermbutton.selectedbutton()
+        logntermbutton.deselectedButton()
         
     }
     @IBAction func nextButton(_ sender: Any) {
@@ -28,10 +32,14 @@ class CreateGoalVc: UIViewController
     }
     
     @IBAction func logterm(_ sender: Any) {
-         print("longterm")
+        logntermbutton.selectedbutton()
+        shorttermbutton.deselectedButton()
+        goaltype = .LongTerm
     }
     @IBAction func shortterm(_ sender: Any) {
-         print("short term")
+        logntermbutton.deselectedButton()
+        shorttermbutton.selectedbutton()
+        goaltype = .ShortTerm
     }
     
     @IBAction func backbutton(_ sender: Any)

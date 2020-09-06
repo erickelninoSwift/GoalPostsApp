@@ -20,5 +20,12 @@ extension UIView
         let duration = Notification.userInfo![UIResponder.keyboardAnimationDurationUserInfoKey] as! Double
         let curve = Notification.userInfo![UIResponder.keyboardAnimationCurveUserInfoKey] as! UInt
         
+        let strtanimation = Notification.userInfo![UIResponder.keyboardFrameBeginUserInfoKey] as! CGRect
+        let endAnimation = Notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! CGRect
+        let detaY = endAnimation.origin.y - strtanimation.origin.y
+        
+        UIView.animateKeyframes(withDuration: duration, delay: 0.0, options: UIView.KeyframeAnimationOptions(rawValue: curve), animations: {
+            self.frame.origin.y += detaY
+        }, completion: nil)
     }
 }
